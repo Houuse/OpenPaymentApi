@@ -1,0 +1,18 @@
+@OpenPaymentApi_HostAddress = https://localhost:7093
+@iban = A001
+
+GET {{OpenPaymentApi_HostAddress}}/accounts/{{iban}}/transactions
+Accept: application/json
+
+#######
+
+POST {{OpenPaymentApi_HostAddress}}/payments
+Content-Type: application/json
+Client-ID: "a1"
+
+{
+  "Creditor_Account": "A001",
+  "Debtor_Account": "B001",
+  "Instructed_Amount": "10.05",
+  "Currency": "SEK"
+}
